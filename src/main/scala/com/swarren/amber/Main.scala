@@ -15,18 +15,18 @@ object Main extends App {
   val individualWordsCounted: Seq[Metrics] = countIndividualWords(wordsSeq)
 
 
-  println("\n\nUnordered Distinct Words with Length:")
+  println(s"\n\nUnordered Distinct Words with Length (${individualWordsCounted.length} words):")
   individualWordsCounted
     .foreach(println)
 
   val wordsWithOddLength = individualWordsCounted
     .filter(_.len % 2 == 1)
 
-  println("\n\nUnordered-Odd-Length Distinct Words with Length:")
+  println(s"\n\nUnordered-Odd-Length Distinct Words with Length (${wordsWithOddLength.length} words):")
   wordsWithOddLength
     .foreach(println)
 
-  println("\n\nOrdered-Odd-Length Distinct Words with Length:")
+  println(s"\n\nOrdered-Odd-Length Distinct Words with Length (${wordsWithOddLength.length} words):")
   wordsWithOddLength
     .sortWith(_.len < _.len)
     .foreach(println)
