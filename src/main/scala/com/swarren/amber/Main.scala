@@ -1,6 +1,6 @@
-package com.swarren
+package com.swarren.amber
 
-import com.swarren.Utils.{countIndividualWords, getJsonList}
+import Utils.{countIndividualWords, getJsonList}
 import org.json4s._
 import org.json4s.native.JsonMethods._
 import org.json4s.native.Serialization

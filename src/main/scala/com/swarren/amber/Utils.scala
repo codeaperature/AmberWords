@@ -1,4 +1,4 @@
-package com.swarren
+package com.swarren.amber
 
 import org.json4s.native.JsonMethods._
 import org.json4s.native.Serialization

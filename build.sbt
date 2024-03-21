@@ -1,7 +1,8 @@
-ThisBuild / version := "0.1.0-SNAPSHOT"
-
+version := "0.1.0-SNAPSHOT"
+name := "AmberWords"
+organization := "com.swarren"
 ThisBuild / scalaVersion := "2.13.13"
-
+//mainClass := Some("com.swarren.amber.Main")
 lazy val root = (project in file("."))
   .settings(
     name := "AmberWords"
@@ -9,7 +10,6 @@ lazy val root = (project in file("."))
 
 resolvers += Resolver.mavenLocal
 version := "1.0"
-
 libraryDependencies := Seq(
   "org.scala-lang" % "scala-library" % "2.13.13",
   "org.json4s" %% "json4s-native" % "4.0.7",

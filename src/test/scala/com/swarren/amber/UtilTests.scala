@@ -1,6 +1,6 @@
-package com.swarren
+package com.swarren.amber
 
-import com.swarren.Utils.countIndividualWords
+import Utils.countIndividualWords
 
 class UtilTests extends munit.FunSuite {
 
