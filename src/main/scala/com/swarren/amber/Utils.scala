@@ -25,8 +25,18 @@ object Utils {
     .flatMap(_.words.toLowerCase.split(" "))
     .groupBy(identity)
     .toList
-    .map { case (word, list) =>
-      Metrics(word, word.length, list.length)
-    }
+    .map { case (word, list) => Metrics(word, word.length, list.length)}
+
+  /**
+   *
+   * @param wordsSeq - Seq of Datum
+   * @return a count of letter occurrences
+   */
+  def countIndividualLetters(wordsSeq: Seq[Datum]): Map[Char, Int] = wordsSeq
+    .flatMap(_.words.toLowerCase.split(" ").flatMap((x: String) => x.toList))
+    .groupBy(identity)
+    .toList
+    .map { case (letter, list) => letter -> list.length }
+    .toMap
 
 }
