@@ -1,28 +1,16 @@
 package com.swarren.amber
 
-import Utils.{countIndividualWords, getJsonList}
-import org.json4s._
-import org.json4s.native.JsonMethods._
-import org.json4s.native.Serialization
+import com.swarren.amber.Utils.{countIndividualWords, getJsonList}
 
 import java.nio.file.{Files, Paths}
 
 object Main extends App {
 
-  implicit val formats: AnyRef with Formats = Serialization.formats(ShortTypeHints(List(classOf[Datum])))
-
   val filename: String = args.lift(1).getOrElse("./src/main/resources/words.json")
   println(s"Using source data from '$filename'.")
 
-  val jsonStr = new String(Files.readAllBytes(Paths.get(filename)))
-//  val wordsSeq: Seq[Datum] = parse(jsonStr).extract[List[Datum]]
-//  val individualWordsCounted: Seq[Metrics] = wordsSeq
-//    .flatMap(_.words.toLowerCase.split(" "))
-//    .groupBy(identity)
-//    .toList
-//    .map { case (word, list) =>
-//      Metrics(word, word.length, list.length)
-//    }
+  val jsonStr: String = new String(Files.readAllBytes(Paths.get(filename)))
+
   val wordsSeq: Seq[Datum]  = getJsonList(jsonStr)
   val individualWordsCounted: Seq[Metrics] = countIndividualWords(wordsSeq)
 
