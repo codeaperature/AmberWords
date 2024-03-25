@@ -11,7 +11,7 @@
 
 
 ## To Try Out Code:
-1. `git clone git@github.com:codeaperature/AmberData.git`
+1. `git clone git@github.com:codeaperature/AmberWords.git`
 2. `cd AmberWords`
 3. `sbt run`
 
